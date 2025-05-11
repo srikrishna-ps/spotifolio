@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Home, User, Book, Certificate, Contact } from "lucide-react";
+import { Home, User, Book, Award, Contact } from "lucide-react";
 
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -10,7 +10,7 @@ const Sidebar = () => {
     { name: "Home", path: "/", icon: <Home className="w-6 h-6" /> },
     { name: "About", path: "/about", icon: <User className="w-6 h-6" /> },
     { name: "Projects", path: "/projects", icon: <Book className="w-6 h-6" /> },
-    { name: "Certifications", path: "/certifications", icon: <Certificate className="w-6 h-6" /> },
+    { name: "Certifications", path: "/certifications", icon: <Award className="w-6 h-6" /> },
     { name: "Contact", path: "/contact", icon: <Contact className="w-6 h-6" /> },
   ];
 
