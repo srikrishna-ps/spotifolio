@@ -92,7 +92,7 @@
   }
 
   .playlist-card {
-    @apply relative overflow-hidden rounded-md bg-spotify-darkgray p-4 group transition-all duration-300 hover:bg-spotify-darkgray/70;
+    @apply relative overflow-hidden rounded-md bg-spotify-darkgray p-4 transition-all duration-300 hover:bg-spotify-darkgray/70;
   }
   
   .playlist-card-img {
