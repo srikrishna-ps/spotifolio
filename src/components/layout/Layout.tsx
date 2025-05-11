@@ -5,14 +5,12 @@ import Topbar from "./Topbar";
 
 const Layout = () => {
   return (
-    <div className="flex h-screen bg-spotify-black text-white overflow-hidden">
+    <div className="flex h-screen bg-spotify-black text-white">
       <Sidebar />
-      <div className="flex flex-col flex-1 ml-64 transition-all duration-300">
+      <div className="flex flex-col flex-1 ml-64">
         <Topbar />
         <main className="flex-1 p-8 overflow-y-auto">
-          <div className="animate-fade-in">
-            <Outlet />
-          </div>
+          <Outlet />
         </main>
       </div>
     </div>
