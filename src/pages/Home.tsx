@@ -1,5 +1,6 @@
+
 import { useState, useEffect } from "react";
-import { Play, Clock, ArrowRight, Pause, Heart, HeartOff, Music, Award } from "lucide-react";
+import { Play, Clock, ArrowRight, Pause, Heart, HeartOff, Music } from "lucide-react";
 
 const Home = () => {
   // State for animations and interactive elements
@@ -118,7 +119,7 @@ const Home = () => {
           {recentProjects.map((project, index) => (
             <div 
               key={project.id} 
-              className="playlist-card group animate-fade-in" 
+              className="playlist-card animate-fade-in" 
               style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
               <div className="playlist-card-img">
