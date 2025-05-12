@@ -50,9 +50,9 @@ const Home = () => {
           {recentProjects.map((project) => (
             <div key={project.id} className="spotify-card group">
               <div className="relative mb-4 overflow-hidden rounded bg-spotify-black/40 aspect-square">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
+                <img
+                  src={project.image}
+                  alt={project.title}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -91,17 +91,17 @@ const Home = () => {
               <Clock className="h-4 w-4" />
             </span>
           </div>
-          
+
           {featuredCertifications.map((cert, index) => (
-            <div 
-              key={cert.id} 
+            <div
+              key={cert.id}
               className="grid grid-cols-[auto_1fr_auto] gap-4 px-6 py-3 hover:bg-white/5 transition-colors duration-200 rounded-md items-center"
             >
               <span className="text-spotify-lightgray">{index + 1}</span>
               <div className="flex items-center gap-3">
-                <img 
-                  src={cert.image} 
-                  alt={cert.title} 
+                <img
+                  src={cert.image}
+                  alt={cert.title}
                   className="w-10 h-10 rounded"
                 />
                 <div>

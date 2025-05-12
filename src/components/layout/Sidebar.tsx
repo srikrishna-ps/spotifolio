@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Home, User, Book, Award, Contact } from "lucide-react";
@@ -15,7 +14,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className={`bg-spotify-black flex flex-col h-screen transition-all duration-300 ${isCollapsed ? 'w-20' : 'w-64'} p-4 fixed left-0 top-0`}>
+    <aside className={`bg-spotify-darkgray flex flex-col h-screen transition-all duration-300 ${isCollapsed ? 'w-20' : 'w-64'} p-6 fixed left-0 top-0 rounded-r-3xl shadow-lg font-inter`}>
       <div className="flex items-center mb-8">
         <div className="flex-shrink-0">
           <div className="w-10 h-10 bg-spotify-green rounded-full flex items-center justify-center">
@@ -25,8 +24,8 @@ const Sidebar = () => {
         {!isCollapsed && (
           <span className="ml-3 text-xl font-bold text-white">DevPortfolio</span>
         )}
-        <button 
-          onClick={() => setIsCollapsed(!isCollapsed)} 
+        <button
+          onClick={() => setIsCollapsed(!isCollapsed)}
           className="ml-auto text-spotify-lightgray hover:text-white transition-colors duration-200"
         >
           {isCollapsed ? '→' : '←'}
@@ -34,13 +33,13 @@ const Sidebar = () => {
       </div>
 
       <nav className="flex-1">
-        <ul className="space-y-2">
+        <ul className="space-y-4 mt-4">
           {navItems.map((item) => (
             <li key={item.name}>
-              <NavLink 
+              <NavLink
                 to={item.path}
-                className={({ isActive }) => 
-                  `nav-link ${isActive ? 'active' : ''} ${isCollapsed ? 'justify-center' : ''}`
+                className={({ isActive }) =>
+                  `nav-link text-lg font-semibold ${isActive ? 'active' : ''} ${isCollapsed ? 'justify-center' : ''}`
                 }
               >
                 {item.icon}

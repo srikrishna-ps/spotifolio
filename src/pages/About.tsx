@@ -1,4 +1,3 @@
-
 import { Calendar, MapPin, Mail, ExternalLink } from "lucide-react";
 
 const About = () => {
@@ -19,128 +18,114 @@ const About = () => {
   ];
 
   return (
-    <div className="text-white animate-fade-in">
-      <section className="mb-12">
-        <div className="flex flex-col md:flex-row gap-8">
-          <div className="md:w-1/3">
-            <div className="sticky top-8">
-              <div className="relative mb-6 overflow-hidden rounded-full w-60 h-60 mx-auto">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Profile" 
-                  className="object-cover w-full h-full"
-                />
-              </div>
-
-              <div className="mb-6">
-                <h1 className="text-3xl font-bold mb-2">John Developer</h1>
-                <p className="text-spotify-lightgray mb-4">Full-Stack Developer</p>
-                
-                <div className="flex flex-col gap-2 text-spotify-lightgray">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4" />
-                    <span>New York, NY</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    <span>5+ Years of Experience</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Mail className="h-4 w-4" />
-                    <span>john@developer.com</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex gap-3 mb-6">
-                <button className="spotify-button text-sm py-2 px-6 w-full">
-                  Follow
-                </button>
-                <button className="border border-white/20 hover:border-white text-white rounded-full text-sm py-2 px-4">
-                  <ExternalLink className="h-4 w-4" />
-                </button>
-              </div>
-
-              <div className="grid grid-cols-3 text-center mb-6">
-                <div>
-                  <div className="text-2xl font-bold">20+</div>
-                  <div className="text-xs text-spotify-lightgray">Projects</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold">10+</div>
-                  <div className="text-xs text-spotify-lightgray">Clients</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold">5+</div>
-                  <div className="text-xs text-spotify-lightgray">Years</div>
-                </div>
-              </div>
-            </div>
+    <div className="text-white animate-fade-in font-inter">
+      {/* Hero/Banner Section */}
+      <div className="relative w-full h-64 md:h-80 bg-gradient-to-br from-spotify-green/60 to-spotify-black flex items-end">
+        {/* Banner background image (optional) */}
+        {/* <img src="/banner.jpg" alt="Banner" className="absolute inset-0 w-full h-full object-cover opacity-30" /> */}
+        {/* Profile image, overlapping banner */}
+        <div className="absolute left-8 bottom-0 transform translate-y-1/2">
+          <div className="w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-spotify-black shadow-xl bg-spotify-darkgray">
+            <img src="/placeholder.svg" alt="Profile" className="object-cover w-full h-full" />
           </div>
+        </div>
+        {/* Name, role, location, buttons */}
+        <div className="ml-60 pb-8 flex flex-col gap-4">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight">John Developer</h1>
+          <div className="flex items-center gap-4 text-spotify-lightgray text-lg">
+            <span>Full-Stack Developer</span>
+            <span className="flex items-center gap-2"><MapPin className="h-5 w-5" /> New York, NY</span>
+          </div>
+          <div className="flex gap-4 mt-2">
+            <button className="spotify-button text-base py-2 px-8">Follow</button>
+            <button className="border border-white/20 hover:border-white text-white rounded-full text-base py-2 px-4 flex items-center justify-center">
+              <ExternalLink className="h-5 w-5" />
+            </button>
+          </div>
+        </div>
+      </div>
 
-          <div className="md:w-2/3">
-            <div className="mb-10">
-              <h2 className="section-title">About Me</h2>
-              <div className="space-y-4 text-spotify-lightgray">
-                <p>
-                  Hello! I'm a passionate full-stack developer with over 5 years of experience building web applications and digital experiences. 
-                </p>
-                <p>
-                  I specialize in creating responsive, user-friendly applications using modern technologies and best practices. My approach combines technical expertise with an eye for design, ensuring projects not only function flawlessly but also provide exceptional user experiences.
-                </p>
-                <p>
-                  Throughout my career, I've worked with startups and established companies to bring their ideas to life. I'm constantly learning and experimenting with new technologies to stay at the forefront of web development.
-                </p>
-              </div>
-            </div>
+      {/* Stats Row */}
+      <div className="flex gap-12 mt-28 mb-12 ml-60">
+        <div className="flex flex-col items-center">
+          <div className="text-3xl font-bold">20+</div>
+          <div className="text-sm text-spotify-lightgray">Projects</div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div className="text-3xl font-bold">10+</div>
+          <div className="text-sm text-spotify-lightgray">Clients</div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div className="text-3xl font-bold">5+</div>
+          <div className="text-sm text-spotify-lightgray">Years</div>
+        </div>
+      </div>
 
-            <div className="mb-10">
-              <h2 className="section-title">Technical Skills</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {skills.map((skillGroup) => (
-                  <div key={skillGroup.category} className="spotify-card">
-                    <h3 className="text-lg font-medium mb-3">{skillGroup.category}</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {skillGroup.items.map((skill) => (
-                        <span 
-                          key={skill} 
-                          className="bg-spotify-black text-spotify-lightgray px-3 py-1 rounded-full text-sm"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+      {/* Main Content */}
+      <div className="ml-60 max-w-4xl">
+        {/* About/Description */}
+        <div className="mb-10">
+          <h2 className="section-title">About</h2>
+          <div className="space-y-4 text-spotify-lightgray text-lg">
+            <p>
+              Hello! I'm a passionate full-stack developer with over 5 years of experience building web applications and digital experiences.
+            </p>
+            <p>
+              I specialize in creating responsive, user-friendly applications using modern technologies and best practices. My approach combines technical expertise with an eye for design, ensuring projects not only function flawlessly but also provide exceptional user experiences.
+            </p>
+            <p>
+              Throughout my career, I've worked with startups and established companies to bring their ideas to life. I'm constantly learning and experimenting with new technologies to stay at the forefront of web development.
+            </p>
+          </div>
+        </div>
 
-            <div>
-              <h2 className="section-title">Career Timeline</h2>
-              <div className="spotify-card">
-                <div className="space-y-4">
-                  {milestones.map((milestone, index) => (
-                    <div key={index} className="flex">
-                      <div className="w-16 text-spotify-green font-medium">
-                        {milestone.year}
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center">
-                          <div className="w-2 h-2 bg-spotify-green rounded-full mr-4"></div>
-                          <div className="text-spotify-lightgray">{milestone.event}</div>
-                        </div>
-                        {index !== milestones.length - 1 && (
-                          <div className="w-0.5 h-6 bg-spotify-darkgray ml-1"></div>
-                        )}
-                      </div>
-                    </div>
+        {/* Skills */}
+        <div className="mb-10">
+          <h2 className="section-title">Skills</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {skills.map((skillGroup) => (
+              <div key={skillGroup.category} className="spotify-card">
+                <h3 className="text-lg font-medium mb-3">{skillGroup.category}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {skillGroup.items.map((skill) => (
+                    <span
+                      key={skill}
+                      className="bg-spotify-black text-spotify-lightgray px-4 py-1 rounded-full text-base font-medium"
+                    >
+                      {skill}
+                    </span>
                   ))}
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Timeline */}
+        <div className="mb-10">
+          <h2 className="section-title">Career Timeline</h2>
+          <div className="spotify-card">
+            <div className="space-y-4">
+              {milestones.map((milestone, index) => (
+                <div key={index} className="flex">
+                  <div className="w-20 text-spotify-green font-medium text-lg">
+                    {milestone.year}
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center">
+                      <div className="w-2 h-2 bg-spotify-green rounded-full mr-4"></div>
+                      <div className="text-spotify-lightgray text-base">{milestone.event}</div>
+                    </div>
+                    {index !== milestones.length - 1 && (
+                      <div className="w-0.5 h-6 bg-spotify-darkgray ml-1"></div>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };
