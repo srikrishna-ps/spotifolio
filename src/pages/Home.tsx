@@ -1,4 +1,3 @@
-
 import { Play, Clock, ArrowRight } from "lucide-react";
 
 const Home = () => {
@@ -29,12 +28,16 @@ const Home = () => {
         </div>
 
         <div className="flex gap-4 mb-6">
-          <button className="spotify-button flex items-center gap-2">
-            <Play className="h-5 w-5 fill-current" /> My Resume
-          </button>
-          <button className="border border-white/20 hover:border-white text-white rounded-full font-bold py-3 px-8 transition-colors duration-200">
-            Contact Me
-          </button>
+          <a href="/resume.pdf" download>
+            <button className="spotify-button flex items-center gap-2">
+              <Play className="h-5 w-5 fill-current" /> My Resume
+            </button>
+          </a>
+          <a href="/contact">
+            <button className="border border-white/20 hover:border-white text-white rounded-full font-bold py-3 px-8 transition-colors duration-200 hover:scale-105 hover:shadow-lg">
+              Contact Me
+            </button>
+          </a>
         </div>
       </section>
 

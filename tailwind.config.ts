@@ -72,7 +72,7 @@ export default {
 				},
 			},
 			fontFamily: {
-				'inter': ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
+				'sans': ['Metropolis', 'Arial', 'Helvetica', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
